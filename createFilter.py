@@ -1,9 +1,11 @@
+__author__ = 'vandreol'
+
 import requests
 
 name = raw_input("Please enter name if the FILTER:")
 port = raw_input("Please enter port to FILTER:")
 
-url = "https://10.51.80.15:8443/controller/nb/v2/monitor/filter/%s" % name
+url = "https://10.65.134.58:8443/controller/nb/v2/monitor/filter/%s" % name
 payload = "{\r\n  \"vlanPriority\": \"\",\r\n  \"tcpOptionLength\": \"\",\r\n  \"vlanId\": \"\",\r\n  \"name\": \"%s\",\r\n  \"tosBits\": \"\",\r\n  \"networkDst\": \"\",\r\n  \"transportPortDst\": \"%s\",\r\n  \"datalayerSrc\": \"\",\r\n  \"datalayerDst\": \"\",\r\n  \"httpMethodId\": \"\",\r\n  \"transportPortSrc\": \"\",\r\n  \"networkSrc\": \"\",\r\n  \"etherType\": \"0x0800\",\r\n  \"bidirectional\": \"false\",\r\n  \"protocol\": \"6\"\r\n}" % (name,port)
 
 headers = {
